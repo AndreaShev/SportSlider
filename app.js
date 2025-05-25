@@ -1,5 +1,5 @@
 
-function sludesPlugin(activeSlide = 0) {
+function slidesPlugin(activeSlide = 0) {
 const slides = document.querySelectorAll('.slide')
 slides[activeSlide].classList.add('active')
 for (const slide of slides) {
@@ -15,4 +15,4 @@ function clearActiveClasses(params) {
 }    
 }
 
-sludesPlugin()
+slidesPlugin()
