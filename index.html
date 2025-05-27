@@ -2,67 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SportSlider</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap " rel="stylesheet">
+  <link rel="preload" as="image" href="images/logan-weaver-lgnwvr--8RlkUaTFGI-unsplash.jpg">
+<link rel="preload" as="style" href="styles.css">
+<link rel="preload" as="script" href="app.js">
 </head>
 <body>
-<div class="container">
-  <div
-      class="slide"
-      style="background-image: url('images/logan-weaver-lgnwvr--8RlkUaTFGI-unsplash.jpg');"
-  >
-    <h3>Strive</h3>
+  <div class="slider-wrapper" role="region" aria-label="Слайдер с мотивационными изображениями">
+    <button class="nav-button prev" aria-label="Предыдущий слайд">&#9664;</button>
+    <div class="container"></div>
+    <button class="nav-button next" aria-label="Следующий слайд">&#9654;</button>
+
+    <div class="pagination" role="tablist"></div>
   </div>
-  <div
-      class="slide"
-      style="
-          background-image: url('images/josh-duke-nPT1SULE1D8-unsplash.jpg');
-        "
-  >
-    <h3>Endure</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image: url('images/joshua-diaz-u2uEGjeHM78-unsplash.jpg');
-        "
-  >
-    <h3>Conquer</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image: url('images/alireza-skndari-xsuPqW8LePc-unsplash.jpg');
-        "
-  >
-    <h3>Believe</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image: url('images/andre-tan-olUHAoDG55E-unsplash.jpg');
-        "
-  >
-    <h3>Achieve</h3>
-  </div>
-   <div
-      class="slide"
-      style="
-          background-image: url('images/sunday-ii-sunday-hF-sCNuiarc-unsplash.jpg');
-        "
-  >
-    <h3>Persevere</h3>
-  </div>
-     <div
-      class="slide"
-      style="
-          background-image: url('images/sunday-ii-sunday-z1uWXbhI1R0-unsplash.jpg');
-        "
-  >
-    <h3>Excel</h3>
-  </div>
-</div>
-<script src="app.js"></script>
+
+  <script src="app.js"></script>
 </body>
 </html>
