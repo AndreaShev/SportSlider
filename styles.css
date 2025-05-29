@@ -19,7 +19,7 @@ body {
 .slider-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1400px; */
   margin: auto;
 }
 
@@ -58,6 +58,8 @@ body {
 
 .slide.active {
 flex: 4;
+box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  z-index: 2;
 }
 
 .slide.active h3 {
@@ -107,6 +109,18 @@ flex: 4;
 }
 
 /* Адаптивность */
+@media (max-width: 1200px) {
+.container {
+  overflow: hidden;
+  height: 80vh;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.slide.active {
+  flex: 0 0 100%;
+}
+
+}
 @media (max-width: 768px) {
   .slide {
     height: 60vh;
@@ -122,3 +136,4 @@ flex: 4;
     font-size: 1.5rem;
   }
 }
+

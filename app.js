@@ -71,6 +71,8 @@ function showSlide(index) {
     slide.classList.toggle('active', i === index);
     slide.setAttribute('aria-selected', i === index ? 'true' : 'false');
   });
+  // Плавно скроллим к активному слайду
+  slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
 
   updatePagination(index);
   currentIndex = index;
