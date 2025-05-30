@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap ');
 
 * {
   box-sizing: border-box;
@@ -19,7 +18,6 @@ body {
 .slider-wrapper {
   position: relative;
   width: 100%;
-  /* max-width: 1400px; */
   margin: auto;
 }
 
@@ -34,7 +32,8 @@ body {
   border-radius: 20px;
   margin: 10px;
   cursor: pointer;
-  flex: 1;
+  width: 10%;
+  transition: width 0.5s ease-in-out;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -53,17 +52,18 @@ body {
   left: 20px;
   margin: 0;
   opacity: 0;
-  transition: opacity 0.3s ease-in 0.4s;
+  transition: opacity 0.4s ease-in 0.4s;
 }
 
 .slide.active {
-flex: 4;
+width: 40%;
 box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
   z-index: 2;
 }
 
 .slide.active h3 {
   opacity: 1;
+
 }
 
 .nav-button {
@@ -115,6 +115,9 @@ box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
   height: 80vh;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
+  .slide {
+    margin: 0;
+  }
 
 .slide.active {
   flex: 0 0 100%;

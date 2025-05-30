@@ -1,14 +1,15 @@
 const slideData = [
-  { image: 'images/logan-weaver-lgnwvr--8RlkUaTFGI-unsplash.jpg', title: 'Strive' },
-  { image: 'images/josh-duke-nPT1SULE1D8-unsplash.jpg', title: 'Endure' },
-  { image: 'images/joshua-diaz-u2uEGjeHM78-unsplash.jpg', title: 'Conquer' },
-  { image: 'images/alireza-skndari-xsuPqW8LePc-unsplash.jpg', title: 'Believe' },
-  { image: 'images/andre-tan-olUHAoDG55E-unsplash.jpg', title: 'Achieve' },
-  { image: 'images/sunday-ii-sunday-hF-sCNuiarc-unsplash.jpg', title: 'Persevere' },
-  { image: 'images/sunday-ii-sunday-z1uWXbhI1R0-unsplash.jpg', title: 'Excel' }
+  { image: 'images/logan-weaver-lgnwvr--8RlkUaTFGI-unsplash.webp', title: 'Strive' },
+  { image: 'images/josh-duke-nPT1SULE1D8-unsplash_11zon.webp', title: 'Endure' },
+  { image: 'images/joshua-diaz-u2uEGjeHM78-unsplash.webp', title: 'Conquer' },
+  { image: 'images/alireza-skndari-xsuPqW8LePc-unsplash.webp', title: 'Believe' },
+  { image: 'images/andre-tan-olUHAoDG55E-unsplash_11zon.webp', title: 'Achieve' },
+  { image: 'images/sunday-ii-sunday-hF-sCNuiarc-unsplash.webp', title: 'Persevere' },
+  { image: 'images/sunday-ii-sunday-z1uWXbhI1R0-unsplash.webp', title: 'Excel' }
 ];
 
 let currentIndex = 0;
+let slides = [];
 
 function createSlides(container, data) {
   container.innerHTML = '';
@@ -29,6 +30,7 @@ function createSlides(container, data) {
       showSlide(index);
     });
 
+
     // При нажатии Enter или Пробела тоже делаем активным
     slide.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -38,6 +40,7 @@ function createSlides(container, data) {
     });
 
     container.appendChild(slide);
+    slides.push(slide);
   });
 }
 
@@ -72,7 +75,14 @@ function showSlide(index) {
     slide.setAttribute('aria-selected', i === index ? 'true' : 'false');
   });
   // Плавно скроллим к активному слайду
-  slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+  // slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+  // Улучшенная прокрутка
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (!isMobile) {
+    slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+  } else {
+    slides[index].focus();
+  }
 
   updatePagination(index);
   currentIndex = index;
@@ -130,7 +140,7 @@ function addKeyboardListeners() {
 }
 
 function initSlider() {
-  const container = document.querySelector('.container');
+  const container = document.getElementById('slider-container');
   const paginationContainer = document.querySelector('.pagination');
 
   createSlides(container, slideData);

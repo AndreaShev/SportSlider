@@ -5,15 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SportSlider</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap " rel="stylesheet">
-  <link rel="preload" as="image" href="images/logan-weaver-lgnwvr--8RlkUaTFGI-unsplash.jpg">
+ <link href="https://fonts.googleapis.com/css2?family=Muli :wght@400&display=swap" rel="stylesheet">
 <link rel="preload" as="style" href="styles.css">
 <link rel="preload" as="script" href="app.js">
+<noscript>
+  <style>
+    .container {
+      overflow: visible;
+      flex-wrap: wrap;
+    }
+    .slide {
+      flex: 1 1 100%;
+    }
+  </style>
+</noscript>
 </head>
 <body>
   <div class="slider-wrapper" role="region" aria-label="Слайдер с мотивационными изображениями">
     <button class="nav-button prev" aria-label="Предыдущий слайд">&#9664;</button>
-    <div class="container"></div>
+    <div class="container" id="slider-container"></div>
     <button class="nav-button next" aria-label="Следующий слайд">&#9654;</button>
 
     <div class="pagination" role="tablist"></div>
