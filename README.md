@@ -98,8 +98,7 @@ sportslider/
 
 ## Автор
 AndreaShev
-https://github.com/AndreaShev)](https://github.com/AndreaShev
-tg @AndresShev
+https://github.com/AndreaShev
 
 ---
 
